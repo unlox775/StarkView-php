@@ -1,0 +1,35 @@
+StarkView README
+----------------
+
+This library is a simple form and AJAX helper library.  It's
+primary role is to make extremely easy, the four phases of form
+filling when you are making a single form that will service both
+the adding and editing of a given type of object.  These are the
+4 phases:
+
+  - Add phase (most inputs blank or with defaults)
+  - Edit phase (inputs filled with the object's information)
+  - Add phase with validation errors (filled with user input)
+  - Edit phase with validation errors (filled with user input)
+
+StarkView also includes AJAX validation, so that it does not need
+to refresh the page in order to show validation errors, but it is
+always backed up with server-side validation, so nothing can be
+slipped through by simply spoofing a form or turning off
+JavaScript.  The validation error advice appears the same whether
+using the AJAX form or submitting as a standard form request.
+
+StarkView is the view component of the lightweight StarkMVC
+framework, but it is such a simple class that it has been used
+inside of the Zend framework quite easily.
+
+StarkView is not a form generator.  Instead, it injects the very
+least amount of code that it needs to, in order to direct the
+different phases of the form.  All that is needed is to control
+the attrubutes of the input tags, so approiately, the main
+method, is named, input_attrs().
+
+The first parameter to input_attrs() is the type of input you are
+using it for, and it adjusts itself so as to work for everything
+from HTML form tag types from text, radio, textarea, button,
+file, password, select, option etc.
